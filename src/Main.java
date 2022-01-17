@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner konsolVeri = new Scanner(System.in);
 
+        Scanner konsolVeri = new Scanner(System.in);
         //KULLANICI TARAFINDAN GİRİLEN 3 SAYININ EN BÜYÜĞÜNÜ BULMA
         /*int sayi1,sayi2,sayi3;
         System.out.println("1. SAYIYI GİRNİZ \n");
@@ -114,7 +114,7 @@ public class Main {
         }
         */
 
-        //DİZİLERDE ÖRNEKLER
+        //DİZİLERDE ÖRNEKLER"
         /*
         double[]dizi3 = {1.2,1.3,1.5,4.4};
         double max = 0 ;
@@ -130,6 +130,167 @@ public class Main {
         System.out.println("TOPLAM:"+toplam);
         */
 
+        //GİRİLEN SAYININ ASAL OLUP OLMADIĞINI BULMA
+        /*System.out.println("SAYİ GİRİNİZ:");
+        int sayi = konsolVeri.nextInt();
+        int sayac =0;
+        for (int i=2;i<sayi;i++) {
+            if (sayi % i == 0) {
+                sayac++;
+            }
+        }
+        if (sayac==0){
+            System.out.println("GİRİLEN SAYI ASALDIR");
+        }
+        else
+            System.out.println("GİRİLEN SAYI ASAL DEĞİLDİR");
+         */
 
+        //KALIN SESLİ VE İNCE SESLİ HARFLERİ BULMA
+        /*
+        System.out.println("HARF GİRİNİZ:");
+        char harf = konsolVeri.next().charAt(0);
+        switch (harf)
+        {
+            case'A':
+            case'a':
+            case'I':
+            case'ı':
+            case'O':
+            case'o':
+            case'U':
+            case'u':{
+                System.out.println("KALIN SESLİ HARFDİR");
+                break;
+            }
+            default:
+                System.out.println("İNCE SESLİ HARFDİR");
+        }
+         */
+
+        //GİRİLEN SAYININ MÜKEMMEL OLUP OLMADIĞINI HESAPLAYAN PROGRAM
+        /*
+        int sayi = 0;
+        int sonuc = 0;
+        System.out.println("SAYİ GİRİNİZ:");
+        sayi = konsolVeri.nextInt();
+        for (int i=1;i<sayi;i++)
+        {
+            if (sayi%i==0) {
+                sonuc += i;
+            }
+        }
+        if (sonuc==sayi){
+            System.out.println("GİRİLEN SAYI MÜKEMMEL SAYIDIR");
+        }
+        else
+            System.out.println("GİRİLEN SAYI MÜKEMMEL SAYI DEĞİLDİR");
+         */
+
+        //GİRİLEN SAYILARIN ARKADAŞ OLUP OLMADIĞINI BULAN PROGRAM
+        /*
+        System.out.println("SAYI GİRİNİZ:");
+        int sayi1 = konsolVeri.nextInt();
+        System.out.println("SAYI GİRİNİZ:");
+        int sayi2 = konsolVeri.nextInt();
+        int toplam1=0,toplam2=0;
+        for (int i=1;i<sayi1;i++){
+            if (sayi1%i==0){
+                toplam1+=i;
+            }
+        }
+        for (int i=1;i<sayi2;i++){
+            if (sayi2%i==0){
+                toplam2+=i;
+            }
+        }
+        if (toplam1==sayi2&&toplam2==sayi1){
+            System.out.println("GİİLEN SAYILAR ARKADAŞ SAYILARDIR");
+        }
+        else
+            System.out.println("GİRİLEN SAYILAR ARKADAŞ SAYI DEĞİLDİR");
+            */
+
+        //DİZİ İÇİNDE SAYI ARAYAN PROGRAM
+        /*
+        int []sayilar = {1,2,3,4,5,6,7};
+        System.out.println("ARANCAK SAYIYI GİRİNİZ:");
+        int arancak = konsolVeri.nextInt();
+        boolean varmi= false;
+
+        for (int sayi:sayilar){
+            if (arancak==sayi){
+                varmi = true;
+            }
+        }
+        if (varmi==true){
+            System.out.println("ARANCAK SAYI DİZİDE VAR");
+
+        }
+        else
+            System.out.println("ARANCAK SAYI DİZİDE YOK");
+         */
+        //SAYI BULMA METHODU ÇAĞIRMA KODU
+        //sayiBulmaca();
+
+        //TOPLA METHODUNU KULLANMA
+        //System.out.println(topla(5,2));
+
+        //TOPLA VARIABLE ARGUMENTS METHOD KULLANIMI
+        System.out.println(topla(1,2,3,4,5));
+
+
+
+
+    }
+
+
+    //camel casing=isimlendirme kuralı
+
+
+
+    //METHOD
+    /*
+    public static void sayiBulmaca (){
+        Scanner konsolVeri = new Scanner(System.in);
+        int []sayilar = {1,2,3,4,5,6,7};
+        System.out.println("ARANCAK SAYIYI GİRİNİZ:");
+        int arancak = konsolVeri.nextInt();
+        boolean varmi= false;
+
+        for (int sayi:sayilar){
+            if (arancak==sayi){
+                varmi = true;
+            }
+        }
+        if (varmi==true){
+            mesajver("ARANCAK SAYI DİZİDE VAR"+arancak);
+
+        }
+        else
+            mesajver("ARANCAK SAYI DİZİDE YOK"+arancak);
+    }
+
+    //PARAMETRELİ METHOT
+    public static void mesajver(String mesaj){
+        System.out.println(mesaj);
+    }
+
+     */
+
+    //GERİ DÖNDÜRME YAPAN METHOD
+    /*
+    public static int topla(int sayi1,int sayi2){
+        return sayi1+sayi2;
+    }
+     */
+
+    //VARIABLE ARGUMENTS METHOD
+    public static int topla(int... sayilar){
+        int toplam =0;
+        for (int sayi:sayilar){
+            toplam+=sayi;
+        }
+        return toplam;
     }
 }
